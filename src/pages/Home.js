@@ -22,7 +22,7 @@ export default function Home() {
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const res = await axios.get('http://localhost:5000/api/products');
+        const res = await axios.get('https://marketplace-backend-99ea.onrender.com/api/products');
         const enriched = res.data.map(p => ({
           ...p,
           discount: p.price < 1000000 ? { percentage: 15 } : null,
