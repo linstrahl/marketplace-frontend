@@ -1,0 +1,122 @@
+/* src/pages/Products/product-list.css */
+.products-page {
+  padding: var(--space-xl) 0;
+}
+
+.products-page h2 {
+  text-align: center;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--color-secondary);
+  margin-bottom: var(--space-lg);
+}
+
+.empty-message,
+.error-message {
+  text-align: center;
+  color: var(--color-text);
+  font-size: 18px;
+  padding: var(--space-xl) 0;
+}
+
+.products-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 28px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.product-card {
+  background: var(--color-surface);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.06);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  padding: 20px;
+  text-align: center;
+}
+
+.product-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+/* --- PERBAIKAN GAMBAR --- */
+.product-image {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #f1f5f9;
+  border-radius: 50%;
+  overflow: hidden; /* ← penting: potong gambar yang melebihi lingkaran */
+}
+
+.product-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* ← isi area tanpa stretch */
+  display: block;
+}
+
+/* Hilangkan SVG placeholder (jika masih ada) */
+.product-image svg {
+  display: none;
+}
+
+.icon {
+  width: 24px;
+  height: 24px;
+  stroke: currentColor;
+  stroke-width: 1.5;
+}
+
+.product-name {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 12px 0 8px;
+  color: var(--color-secondary);
+}
+
+.product-price {
+  color: var(--color-primary);
+  font-weight: 700;
+  font-size: 18px;
+  margin-bottom: 16px;
+}
+
+.product-action-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 8px 16px;
+  font-size: 14px;
+  color: var(--color-primary);
+  text-decoration: none;
+  border: 1px solid var(--color-border);
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.product-action-btn:hover {
+  background-color: #f1f5f9;
+  border-color: var(--color-primary);
+}
+
+/* Responsif */
+@media (max-width: 768px) {
+  .products-grid {
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .products-grid {
+    grid-template-columns: 1fr;
+  }
+}

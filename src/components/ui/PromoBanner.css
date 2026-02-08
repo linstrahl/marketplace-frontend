@@ -1,0 +1,31 @@
+/* src/components/ui/PromoBanner.css */
+.promo-banner {
+  display: flex;
+  gap: 12px;
+  padding: 8px 0;
+  background: var(--color-primary-light);
+  border-radius: 12px;
+  margin: 24px 0;
+}
+
+.promo-item {
+  flex: 1;
+  text-align: center;
+  padding: 8px;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 14px;
+  color: white;
+}
+
+.bg-blue {
+  background: var(--color-primary);
+}
+
+.bg-green {
+  background: var(--color-success);
+}
+
+.bg-purple {
+  background: #7c3aed;
+}
